@@ -1,0 +1,39 @@
+//A fixed point in an array is an element whose value is equal to its index. Given a sorted array, return a fixed point, if one exists. Otherwise, return False.
+//For example, given [-6, 0, 2, 40], you should return 2. Given [1, 5, 7, 8], you should return False.
+
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		bool find = false;
+		int[] arrInt = new int[4];
+		Random randi = new Random();
+		for (int i = 0; i < arrInt.Length; i++)
+		{
+			arrInt[i] = randi.Next(-10, 10);
+		}
+
+		Array.Sort(arrInt);
+		for (int i = 0; i < arrInt.Length; i++)
+		{
+			Console.WriteLine(arrInt[i]);
+		}
+
+		for (int i = 0; i < arrInt.Length; i++)
+		{
+			if (arrInt[i] == i)
+			{
+				Console.WriteLine(i);
+				find = true;
+				break;
+			}
+		}
+
+		if (find != true)
+		{
+			Console.WriteLine(find);
+		}
+	}
+}
