@@ -31,7 +31,7 @@ public class Program
 			}
 		}
 
-		if (find != true)
+		if (!find)
 		{
 			Console.WriteLine(find);
 		}
