@@ -1,0 +1,30 @@
+//Given an array of integers, determine whether it contains a Pythagorean triplet.
+//Recall that a Pythogorean triplet (a, b, c) is defined by the equation a2+ b2= c2.
+
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		int[] arrInt = new int[3];
+		for (int i = 0; i < arrInt.Length; i++)
+		{
+			arrInt[i] = Convert.ToInt32(Console.ReadLine());
+		}
+
+		for (int i = 0; i < arrInt.Length; i++)
+		{
+			Console.WriteLine(arrInt[i]);
+		}
+
+		if ((arrInt[0] * arrInt[0]) + (arrInt[1] * arrInt[1]) == (arrInt[2] * arrInt[2]))
+		{
+			Console.WriteLine("This array contains a pythagorean triplet");
+		}
+		else
+		{
+			Console.WriteLine("This array does not contains a pythagorean triplet");
+		}
+	}
+}
