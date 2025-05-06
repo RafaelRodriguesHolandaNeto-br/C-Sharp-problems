@@ -1,0 +1,33 @@
+//FizzBuzz is a well-known problem often found in coding interviews. It's a simple way to check your understanding of loops and conditions. Let's break it down:
+//You need to write a program that counts from 1 to 100. But, there's a twist:
+//For numbers that are multiples of 3, you should print "Fizz" instead.
+//For multiples of 5, print "Buzz".
+//And for numbers that are multiples of both 3 and 5, print "FizzBuzz".
+
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		for (int i = 1; i <= 100; i++)
+		{
+			if ((i % 3 == 0) && (i % 5 != 0))
+			{
+				Console.WriteLine("Fizz");
+			}
+			else if ((i % 3 != 0) && (i % 5 == 0))
+			{
+				Console.WriteLine("Buzz");
+			}
+			else if ((i % 3 == 0) && (i % 5 == 0))
+			{
+				Console.WriteLine("FizzBuzz");
+			}
+			else
+			{
+				Console.WriteLine(i);
+			}
+		}
+	}
+}
