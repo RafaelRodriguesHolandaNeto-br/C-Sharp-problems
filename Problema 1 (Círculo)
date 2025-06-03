@@ -1,0 +1,60 @@
+//Código que pede o valor do raio de um círculo e retorna a área e o perímetro. Ele é repetido até o usuário desejar parar.
+
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		while (true)
+		{
+			Console.WriteLine("Digite o valor do raio do círculo, e eu calcularei sua área e seu perímetro");
+			string entrada = Console.ReadLine();
+			if (double.TryParse(entrada, out double raio) && raio >= 0)
+			{
+				var c = new Círculo(raio);
+				Console.WriteLine($"Área: {c.Area():F2}");
+				Console.WriteLine($"Perímetro: {c.Perimetro():F2}");
+				string escolha = "";
+				while (escolha != "sim" && escolha != "não" && escolha != "nao")
+				{
+					Console.WriteLine("Deseja continuar?");
+					escolha = Console.ReadLine().ToLower();
+					if (escolha == "sim")
+					{
+						Console.WriteLine("Continuemos");
+					}
+					else if (escolha == "não" || escolha == "nao")
+					{
+						Console.WriteLine("Adeus");
+						return;
+					}
+				}
+			}
+			else
+			{
+				Console.WriteLine("Valor inválido, digite novamente");
+			}
+		}
+	}
+}
+
+public class Círculo
+{
+	public double Raio { get; private set; }
+
+	public Círculo(double raio)
+	{
+		Raio = raio;
+	}
+
+	public double Area()
+	{
+		return Math.PI * Raio * Raio;
+	}
+
+	public double Perimetro()
+	{
+		return 2 * Math.PI * Raio;
+	}
+}
